@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmed — ClinicEvolve™</title>
+  <meta name="description" content="Your appointment has been booked successfully. Check your email for confirmation details.">
+  <link rel="stylesheet" href="src/css/styles.css">
+  <link rel="icon" type="image/png" href="src/assets/images/clinicevolve_logo.png">
+  <style>
+    /* Thank You page specific styles */
+    .thankyou-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .thankyou-page::before {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .thankyou-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .success-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(201, 168, 76, 0.12);
+      border: 2px solid rgba(201, 168, 76, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 40px;
+      animation: scaleIn 0.6s ease forwards;
+    }
+
+    .success-icon svg {
+      width: 48px;
+      height: 48px;
+      color: var(--brand-gold);
+      animation: checkDraw 0.4s ease 0.3s forwards;
+      opacity: 0;
+    }
+
+    @keyframes scaleIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes checkDraw {
+      0% { opacity: 0; transform: scale(0.5); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .thankyou-content h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .email-card {
+      background: var(--surface-dark);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin: 40px 0;
+      text-align: left;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .email-card .email-icon {
+      color: var(--brand-gold);
+      min-width: 28px;
+      margin-top: 2px;
+    }
+
+    .email-card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: var(--pure-white);
+    }
+
+    .email-card p {
+      font-size: 14px;
+      color: var(--grey-mid);
+      line-height: 1.6;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--brand-gold);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 15px;
+      transition: color var(--transition-fast);
+    }
+
+    .back-link:hover {
+      color: var(--gold-light);
+    }
+
+    .back-link .arrow {
+      transition: transform var(--transition-fast);
+    }
+
+    .back-link:hover .arrow {
+      transform: translateX(-4px);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="thankyou-page">
+    <div class="thankyou-content">
+
+      <!-- Success Icon -->
+      <div class="success-icon" id="success-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+
+      <!-- Heading -->
+      <h1>Appointment Booking<br><span class="gold-text">Successful</span></h1>
+
+      <!-- Email Card -->
+      <div class="email-card" id="email-confirmation-card">
+        <div class="email-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <polyline points="22,4 12,13 2,4"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Check your email</h3>
+          <p>We've sent a confirmation to your inbox. If you don't see it within a few minutes, please check your spam folder.</p>
+        </div>
+      </div>
+
+      <!-- Back Link -->
+      <a href="index.html" class="back-link" id="back-to-home-link">
+        <span class="arrow">←</span> Back to Home
+      </a>
+
+    </div>
+  </main>
+
+</body>
+</html>
