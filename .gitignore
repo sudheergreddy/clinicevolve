@@ -1,0 +1,16 @@
+# Reference files — internal use only, not for deployment
+reference_screenshots/
+CLAUDE.md
+
+# Root level duplicates and working files
+clinicevolve_logo.png
+ClinicEvolve_Brand_Guidelines.pdf
+clinicevolve_existing_site.pdf
+clinicevolve_website_copy_clean.md
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
